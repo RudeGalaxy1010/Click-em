@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Source.Game {
     public class FloatingScore : MonoBehaviour {
         [SerializeField] private float _speed;
+        [SerializeField] private float _alphaSpeed;
         [SerializeField] private float _showTime;
         [SerializeField] private TMP_Text _text;
 
@@ -22,7 +23,7 @@ namespace Source.Game {
                 position, 
                 position + Vector3.up, 
                 _speed * Time.deltaTime);
-            _text.alpha -= _speed * Time.deltaTime;
+            _text.alpha -= _alphaSpeed * Time.deltaTime;
 
             if (_time > _showTime) {
                 Destroy(gameObject);

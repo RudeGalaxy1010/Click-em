@@ -148,5 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _showTime: 2
+  _alphaSpeed: 2
+  _showTime: 1
   _text: {fileID: 2595637854658892233}
