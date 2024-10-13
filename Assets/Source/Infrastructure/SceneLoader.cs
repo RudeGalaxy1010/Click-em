@@ -8,7 +8,7 @@ namespace Source.Infrastructure {
         private const string GameScene = "GameScene";
 
         public AsyncOperation LoadMenuSceneAsync(Action onLoaded = null) {
-            if (SceneManager.GetActiveScene().name != GameScene) {
+            if (SceneManager.GetActiveScene().name != MenuScene) {
                 return SceneManager.LoadSceneAsync(MenuScene);
             }
             
