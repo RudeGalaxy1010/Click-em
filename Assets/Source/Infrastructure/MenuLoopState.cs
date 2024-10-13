@@ -27,7 +27,7 @@ namespace Source.Infrastructure {
         }
 
         private void OnHostButtonClick() {
-            
+            _gameStateMachine.Enter<LoadGameState, LoadingBar>(_emitter.LoadingBar);
         }
     }
 }
