@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2490606879883739968, guid: 8e72e8661da357a42acdc8edf35640d6, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5194419749454088111, guid: 8e72e8661da357a42acdc8edf35640d6, type: 3}
       propertyPath: m_Name
       value: LoadingCanvas

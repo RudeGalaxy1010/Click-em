@@ -23,7 +23,10 @@ namespace Source.Infrastructure {
 
         public void Exit() { }
 
-        private void RegisterServices() { }
+        private void RegisterServices() {
+            IAssetsProvider assetsProvider = new LocalAssetsProvider();
+            Services.Container.RegisterSingle<IGameFactory>(new GameFactory(assetsProvider));
+        }
 
         private async UniTask LoadServerDataAsync() {
             string userId = TelegramBridge.Instance.GetUserId();

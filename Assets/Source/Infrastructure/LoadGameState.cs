@@ -29,23 +29,12 @@ namespace Source.Infrastructure {
         
         private async UniTask LoadGameAsync() {
             AsyncOperation loadingOperation = _sceneLoader.LoadGameSceneAsync();
-            loadingOperation.allowSceneActivation = false;
-
-            while (loadingOperation.progress < SceneLoadingMaxValue) {
+            
+            while (!loadingOperation.isDone) {
                 float sceneProgress = Mathf.Clamp01(loadingOperation.progress / SceneLoadingMaxValue);
                 _loadingBar.SetProgress(sceneProgress);
                 await UniTask.Yield();
             }
-
-            loadingOperation.allowSceneActivation = true;
         }
-
-        private void OnSceneReady() {
-            // TODO: Inject level to load
-            int currentLevel = 0;
-
-            _gameStateMachine.Enter<GameLoopState>();
-        }
-
     }
 }

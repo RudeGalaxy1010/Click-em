@@ -5,5 +5,6 @@ namespace Source.Config {
     public class GameConfig : ScriptableObject {
         public float LevelTime = 30;
         public int ScorePerClick = 1;
+        public Vector2 FloatingScoreOffsets = new Vector2(1, 0.25f);
     }
 }

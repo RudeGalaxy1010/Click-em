@@ -25,18 +25,15 @@ namespace Source.Infrastructure {
         }
 
         public void Exit() { }
-
+        
         private async UniTask LoadMenuAsync() {
             AsyncOperation loadingOperation = _sceneLoader.LoadMenuSceneAsync();
-            loadingOperation.allowSceneActivation = false;
-
-            while (loadingOperation.progress < SceneLoadingMaxValue) {
+            
+            while (!loadingOperation.isDone) {
                 float sceneProgress = Mathf.Clamp01(loadingOperation.progress / SceneLoadingMaxValue);
                 _loadingBar.SetProgress(sceneProgress);
                 await UniTask.Yield();
             }
-
-            loadingOperation.allowSceneActivation = true;
         }
     }
 }

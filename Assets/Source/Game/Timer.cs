@@ -12,8 +12,6 @@ namespace Source.Game {
             _coroutineRunner = coroutineRunner;
         }
 
-        public float TimeLeft => _timeLeft;
-
         public void Start(float time, Action<float> onChange = null, Action onEnd = null) {
             _timeLeft = time;
             onChange?.Invoke(_timeLeft);

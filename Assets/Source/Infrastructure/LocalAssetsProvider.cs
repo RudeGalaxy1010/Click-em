@@ -6,7 +6,12 @@ namespace Source.Infrastructure {
             T resource = Resources.Load<T>(path);
             return Object.Instantiate(resource);
         }
-        
+
+        public T Instantiate<T>(string path, Transform parent) where T : Object {
+            T resource = Resources.Load<T>(path);
+            return Object.Instantiate(resource, parent);
+        }
+
         public T Load<T>(string path) where T : Object {
             return Resources.Load<T>(path);
         }
